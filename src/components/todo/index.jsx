@@ -1,9 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
 import * as actions from '../../actions/todo';
-
 import './todo.scss';
+
 
 class TODO extends React.Component {
     componentWillMount() {
@@ -35,7 +34,7 @@ class TODO extends React.Component {
                     <input type="text" placeholder="Tarea" onKeyPress={this._onKeyPressHandler.bind(this)} />
                 </div>
                 <ul>
-                    {list.map((item, index) => <li key={index}>{item} <a onClick={this._delItemHandler.bind(this, index)}>x</a></li>)}
+                    {list.map((item, index) => <li key={index}><span>{index + 1}</span> {item} <a onClick={this._delItemHandler.bind(this, index)}>x</a></li>)}
                 </ul>
             </div>
         )
